@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { createClient } from '@supabase/supabase-js'
 
 
-const supabase = createClient('https://uyzlmhwxpgjmdrdfehci.supabase.co', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV5emxtaHd4cGdqbWRyZGZlaGNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA2ODgxNzAsImV4cCI6MjAxNjI2NDE3MH0.SUSoyuHG4GbGAe_PhpSPrxLx-MSDQ4ri5WuHaThOMoM")
+const supabase = createClient('https://uyzlmhwxpgjmdrdfehci.supabase.co', process.env.REACT_APP_SUPABASE_KEY)
 
 function App() {
   const [compounds, setCompounds] = useState([]);
