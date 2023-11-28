@@ -1,0 +1,50 @@
+.card {
+   border-radius: 25px;
+   padding: 20px;
+   margin: 10px;
+   background-color: #fff;
+   max-width: 340px;
+   min-width: 320px;
+   min-height: 230px;
+}
+
+.card-header {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: start;
+   margin-bottom: 30px;
+}
+
+.card-header h2 {
+   margin: 0;
+   font-size: 1.5rem;
+   color: #3b3b3b;
+}
+
+.card-header h4 {
+   margin: 0;
+   font-size: 0.8rem;
+   color: #707070;
+}
+
+.pos-icon{
+   width: 2.5rem;
+   height: 2.5rem;
+   color: #3b3b3b;
+}
+
+.neg-icon{
+   width: 2.5rem;
+   height: 2.5rem;
+   color: #3b3b3b;
+}
+
+.card-content {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: start;
+}
+
+
