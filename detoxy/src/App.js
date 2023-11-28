@@ -15,12 +15,18 @@ function App() {
 
   const fetchIngredients = async (ingredients) => {
     try {
+      let results = []
+      for (const name of searchTermArray) {
         const { data, error } = await supabase
-            .from('kosmetikinhaltsstoffe')
-            .select('*')
-            .ilikeAnyOf('name', ingredients);
-
-        return data;
+          .from('kosmetikinhaltsstoffe')
+          .select('*')
+          .ilike('name', `%${name}%`)
+          
+        if (data) {
+          results.push(...data);
+        }
+      }
+      return results;
     } catch (err) {
         console.error('Fehler beim Abrufen der Inhaltsstoffe:', err);
         return [];
@@ -32,8 +38,8 @@ function App() {
     fetchIngredients(searchTermArray).then((data) => {
       setCompounds(data);
     });
-    console.log("Gesuchte Inhaltsstoffe:" + searchTermArray)
-    console.log("Gefundene Inhaltsstoffe:" + compounds);
+    console.log(searchTermArray)
+    console.log(compounds);
   };
 
   const detectSeparator = (searchTerm) => {
@@ -52,19 +58,23 @@ function App() {
   return (
     <div className="App">
       <Logo className="App-logo" />
-      <SearchBar handleSearch={handleSearch}></SearchBar>
-      <div className='results'>
-        {compounds.map((compound) => (
-          <CompoundCard
-            key={compound.id}
-            title={compound.name}
-            chemClass={compound.chemischefamilie}
-            positiveAttributes={compound.positiveeigenschaften}
-            negativeAttributes={compound.negativeeigenschaften}
-          />
-        ))}
-      </div>
+       
+        <SearchBar handleSearch={handleSearch}></SearchBar> 
+        
+        {compounds && compounds.length > 0 && (
+          <div className='results'>
+            {compounds.map((compound) => (
+              <CompoundCard
+                key={compound.id}
+                title={compound.name}
+                chemClass={compound.chemischefamilie}
+                positiveAttributes={compound.positiveeigenschaften}
+                negativeAttributes={compound.negativeeigenschaften}
+              />
+            ))}
     </div>
+  )}
+</div>
   );
 }
 

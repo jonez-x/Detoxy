@@ -13,7 +13,7 @@
   padding: 15px;
   padding-top: 14px;
   background-color: #fff;
-  border: 1px solid #9fcdf7;
+  border: none;
   border-radius: 20px;
   outline: none;
   font-weight: 400;
@@ -23,8 +23,8 @@
 }
 
 .searchbar input:focus {
-  border-color: #9fcdf7;
-  box-shadow: 0px 0px 8px 0.3px #bfdef9;
+  border-color: #8FBC8F;
+  box-shadow: 0px 0px 20px 0.4px #8FBC8F;
 }
 
 .searchbar button {
@@ -34,8 +34,6 @@
   color: #fff;
   border: none;
   border-radius: 20px;
-  cursor: pointer;
   width: 3.5rem;
   height: 3.5rem;
-  pointer-events: none;
 }

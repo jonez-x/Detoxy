@@ -1,7 +1,7 @@
 import React from 'react';
 import './compound-card.css';
-import {ReactComponent as NegativeIcon} from '../../assets/skull-outline.svg';
-import {ReactComponent as PositiveIcon} from '../../assets/medkit-outline.svg';
+import {ReactComponent as NegativeIcon} from '../../assets/remove-outline.svg';
+import {ReactComponent as PositiveIcon} from '../../assets/add-outline.svg';
 
 const CompoundCard = ({ title, chemClass, positiveAttributes, negativeAttributes }) => {
     return (

@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color: #1f8ced;
   min-height: 100vh;
 }
 
@@ -11,17 +10,23 @@ h1 {
   padding-top: 1rem;
 }
 
+h3{
+  font-size: 3rem;
+  color: #fff;
+  padding-top: 1rem;
+}
+
 .App-logo{
   height: 40vmin;
   pointer-events: none;
+  width: 90%;
 }
 
 .results{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 100px;
   margin-top: 20px;
 }

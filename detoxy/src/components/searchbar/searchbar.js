@@ -6,7 +6,6 @@ const SearchBar = ({handleSearch}) => {
   const [searchTerm, setSearchTerm] = useState('');
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
-    handleSearch(searchTerm);
   };
   return (
     <div className="searchbar">
@@ -17,7 +16,7 @@ const SearchBar = ({handleSearch}) => {
         placeholder="Inhaltsstoffe suchen"
       >
       </input> 
-      <button><SearchIcon></SearchIcon></button>
+      <button onClick={() => handleSearch(searchTerm)}><SearchIcon></SearchIcon></button>
     </div>
   );
 };
